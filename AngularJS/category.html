@@ -1,0 +1,108 @@
+<?php
+
+  session_start();
+  $ID = $_SESSION['ID'];
+  $F_name = $_SESSION['F_name'];
+  $L_name = $_SESSION['L_name'];
+  
+  echo "id: ".$ID;
+  //echo "Name: ".$name;
+
+    if($_SESSION["ID"] == null)
+    {
+     header("Location: ./Login.php");
+    }
+  else{
+
+?>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="Ozon/dist/html/assets/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="Ozon/dist/html/assets/css/flat-admin.css">
+
+  <!-- Theme -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/blue-sky.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/blue.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/red.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/yellow.css">
+
+</head>
+<body>
+
+<div class="app app-default">
+<?php include("sidebar.php");?>
+
+
+<div class="app-container">
+
+  <nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse in">
+      <ul class="nav navbar-nav navbar-mobile">
+        <li>
+          <button type="button" class="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+          </button>
+        </li>
+        
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+     		<a href="./WelcomePage.html"> 
+            <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button></a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+	
+		<div class="row">
+			<form action="adddetail.php" method="POST" name="form">
+  			  <div class="col-md-12">
+    			  <div class="card">
+       					 <div class="card-header">
+       						   Basic Elements
+      					  </div>
+      					  <div class="card-body">
+         				 <div class="row">
+ 							 <div class="col-md-6">
+  							  <input type="text" class="form-control" name="cat_nm" id="cat_nm" placeholder="Category name" required >
+  							  <textarea name="name" id="name"  rows="3" class="form-control" required ></textarea>
+  							  </div>
+  							  
+  							  <div class="form-group">
+      							<div class="col-md-9 col-md-offset-3">
+       								 <button type="submit" class="btn btn-primary" >Save</button>
+       								  <a href="./DisplayCategory.php"> 
+       								 <button type="button" class="btn btn-primary" >Cancle</button>
+      									</a>
+   							   </div>
+  						  </div>
+  							  
+  							</div>
+  							
+  							
+  							
+      				</div>
+      			</div>	
+      	</div>
+      	</form>
+</div>
+
+  
+</div>
+  <script src="all-letter.js"> </script>
+  <script type="text/javascript" src="./assets/js/vendor.js"></script>
+  <script type="text/javascript" src="./assets/js/app.js"></script>
+
+</form>
+</body>
+</html>
+
+<?php } ?>
